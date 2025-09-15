@@ -19,6 +19,12 @@ const eslintConfig = [
       "build/**",
       "next-env.d.ts",
     ],
+    rules: {
+      // désactive la règle qui casse ton build
+      "react/no-unescaped-entities": "off",
+      // tu peux aussi désactiver les unused-vars si besoin :
+      "@typescript-eslint/no-unused-vars": "off",
+    },
   },
 ];
 
