@@ -5,10 +5,11 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ChevronDown, ChevronUp, HelpCircle, MessageCircle, Calculator, Receipt, TrendingUp, Shield, Phone, Mail, ArrowRight, Clock, Users, CheckCircle } from 'lucide-react';
 
-export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(null);
+export default function FAQPage() {
+  // ✅ useState doit être ici
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
