@@ -18,18 +18,14 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  // … ton code de soumission
-};
-
-    
     // Simulate API call
     setTimeout(() => {
       setStatus('success');
@@ -46,7 +42,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Navbar */}
       <Navbar />
 
-            {/* Contact Form and Info Section */}
+      {/* Contact Form and Info Section */}
       <section className="py-18 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-12">
