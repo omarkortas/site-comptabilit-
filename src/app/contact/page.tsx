@@ -18,15 +18,17 @@ export default function Contact() {
   const [status, setStatus] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Handle form input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+  // … ton code de soumission
+};
+
     
     // Simulate API call
     setTimeout(() => {
